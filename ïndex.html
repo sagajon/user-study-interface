@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 <head>
     <title>Evaluation form</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -23,7 +24,8 @@
             By clicking "Continue" below, you agree to take part in this study. Data from this study will be be kept confidential and only shown in aggregate form. This study is conducted in accordance with the ethical guidelines of KTH Royal Institute of Technology.
         </p>
         <br>
-            
+        <!-- <model-viewer src="img\Tree snow.gltf" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer> -->
+        <!-- <img src="img/S1C1C1.png">     -->
         <button id="continueButton" class="centerButton" disabled onclick="continueButtonPressed()">Continue</button>
     </div>
 
@@ -77,33 +79,11 @@
     <div id="trialPage" class="page">
         <h2 id="trialNumber">Trial x</h2>
         <p>Of the two images below, which one is more <span class="highlightedText">realistic</span> to you?</p>
-        <div id="leftImageContainer">
-            <table>
-                <tr>
-                    <td>
-                        <img id="leftImage">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button class="realismButton" onclick="realismSubmit(this.innerHTML)">Left</button>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <div id="rightImageContainer">
-            <table>
-                <tr>
-                    <td>
-                        <img id="rightImage">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button class="realismButton" onclick="realismSubmit(this.innerHTML)">Right</button>
-                    </td>
-                </tr>
-            </table>
+        <div id="imageContainer">
+            <model-viewer class="model" id="leftImage" src="img\Tree snow.gltf" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+            <button class="realismButton" onclick="realismSubmit(this.innerHTML)">Left</button>
+            <model-viewer class="model" id="rightImage" src="img\Tree.gltf" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+            <button class="realismButton" onclick="realismSubmit(this.innerHTML)">Right</button>
         </div>
     </div>
 

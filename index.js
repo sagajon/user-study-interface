@@ -1,92 +1,93 @@
-const trials = [
-    ["S1C1C1", "S1C1C2"],
-    ["S1C1C1", "S1C1C3"],
-    ["S1C1C1", "S1C2C1"],
-    ["S1C1C1", "S1C3C1"],
-    ["S1C1C1", "S2C1C1"],
-    ["S1C1C1", "S3C1C1"],
-    ["S1C1C2", "S1C1C3"],
-    ["S1C1C2", "S1C2C2"],
-    ["S1C1C2", "S1C3C2"],
-    ["S1C1C2", "S2C1C2"],
-    ["S1C1C2", "S3C1C2"],
-    ["S1C1C3", "S1C2C3"],
-    ["S1C1C3", "S1C3C3"],
-    ["S1C1C3", "S2C1C3"],
-    ["S1C1C3", "S3C1C3"],
-    ["S1C2C1", "S1C2C2"],
-    ["S1C2C1", "S1C2C3"],
-    ["S1C2C1", "S1C3C1"],
-    ["S1C2C1", "S2C2C1"],
-    ["S1C2C1", "S3C2C1"],
-    ["S1C2C2", "S1C2C3"],
-    ["S1C2C2", "S1C3C2"],
-    ["S1C2C2", "S2C2C2"],
-    ["S1C2C2", "S3C2C2"],
-    ["S1C2C3", "S1C3C3"],
-    ["S1C2C3", "S2C2C3"],
-    ["S1C2C3", "S3C2C3"],
-    ["S1C3C1", "S1C3C2"],
-    ["S1C3C1", "S1C3C3"],
-    ["S1C3C1", "S2C3C1"],
-    ["S1C3C1", "S3C3C1"],
-    ["S1C3C2", "S1C3C3"],
-    ["S1C3C2", "S2C3C2"],
-    ["S1C3C2", "S3C3C2"],
-    ["S1C3C3", "S2C3C3"],
-    ["S2C1C1", "S2C1C2"],
-    ["S2C1C1", "S2C1C3"],
-    ["S2C1C1", "S2C2C1"],
-    ["S2C1C1", "S2C3C1"],
-    ["S2C1C1", "S3C1C1"],
-    ["S2C1C2", "S2C1C3"],
-    ["S2C1C2", "S2C2C2"],
-    ["S2C1C2", "S2C3C2"],
-    ["S2C1C2", "S3C1C2"],
-    ["S2C1C3", "S2C2C3"],
-    ["S2C1C3", "S2C3C3"],
-    ["S2C1C3", "S3C1C3"],
-    ["S2C2C1", "S2C2C2"],
-    ["S2C2C1", "S2C2C3"],
-    ["S2C2C1", "S2C3C1"],
-    ["S2C2C1", "S3C2C1"],
-    ["S2C2C2", "S2C2C3"],
-    ["S2C2C2", "S2C3C2"],
-    ["S2C2C2", "S3C2C2"],
-    ["S2C2C3", "S2C3C3"],
-    ["S2C2C3", "S3C2C3"],
-    ["S2C3C1", "S2C3C2"],
-    ["S2C3C1", "S2C3C3"],
-    ["S2C3C1", "S3C3C1"],
-    ["S2C3C2", "S2C3C3"],
-    ["S2C3C2", "S3C3C2"],
-    ["S3C1C1", "S3C1C2"],
-    ["S3C1C1", "S3C1C3"],
-    ["S3C1C1", "S3C2C1"],
-    ["S3C1C1", "S3C3C1"],
-    ["S3C1C2", "S3C1C3"],
-    ["S3C1C2", "S3C2C2"],
-    ["S3C1C2", "S3C3C2"],
-    ["S3C1C3", "S3C2C3"],
-    ["S3C2C1", "S3C2C2"],
-    ["S3C2C1", "S3C2C3"],
-    ["S3C2C1", "S3C3C1"],
-    ["S3C2C2", "S3C2C3"],
-    ["S3C2C2", "S3C3C2"],
-    ["S3C3C1", "S3C3C2"]
-];
+// const trials = [
+//     ["S1C1C1", "S1C1C2"],
+//     ["S1C1C1", "S1C1C3"],
+//     ["S1C1C1", "S1C2C1"],
+//     ["S1C1C1", "S1C3C1"],
+//     ["S1C1C1", "S2C1C1"],
+//     ["S1C1C1", "S3C1C1"],
+//     ["S1C1C2", "S1C1C3"],
+//     ["S1C1C2", "S1C2C2"],
+//     ["S1C1C2", "S1C3C2"],
+//     ["S1C1C2", "S2C1C2"],
+//     ["S1C1C2", "S3C1C2"],
+//     ["S1C1C3", "S1C2C3"],
+//     ["S1C1C3", "S1C3C3"],
+//     ["S1C1C3", "S2C1C3"],
+//     ["S1C1C3", "S3C1C3"],
+//     ["S1C2C1", "S1C2C2"],
+//     ["S1C2C1", "S1C2C3"],
+//     ["S1C2C1", "S1C3C1"],
+//     ["S1C2C1", "S2C2C1"],
+//     ["S1C2C1", "S3C2C1"],
+//     ["S1C2C2", "S1C2C3"],
+//     ["S1C2C2", "S1C3C2"],
+//     ["S1C2C2", "S2C2C2"],
+//     ["S1C2C2", "S3C2C2"],
+//     ["S1C2C3", "S1C3C3"],
+//     ["S1C2C3", "S2C2C3"],
+//     ["S1C2C3", "S3C2C3"],
+//     ["S1C3C1", "S1C3C2"],
+//     ["S1C3C1", "S1C3C3"],
+//     ["S1C3C1", "S2C3C1"],
+//     ["S1C3C1", "S3C3C1"],
+//     ["S1C3C2", "S1C3C3"],
+//     ["S1C3C2", "S2C3C2"],
+//     ["S1C3C2", "S3C3C2"],
+//     ["S1C3C3", "S2C3C3"],
+//     ["S2C1C1", "S2C1C2"],
+//     ["S2C1C1", "S2C1C3"],
+//     ["S2C1C1", "S2C2C1"],
+//     ["S2C1C1", "S2C3C1"],
+//     ["S2C1C1", "S3C1C1"],
+//     ["S2C1C2", "S2C1C3"],
+//     ["S2C1C2", "S2C2C2"],
+//     ["S2C1C2", "S2C3C2"],
+//     ["S2C1C2", "S3C1C2"],
+//     ["S2C1C3", "S2C2C3"],
+//     ["S2C1C3", "S2C3C3"],
+//     ["S2C1C3", "S3C1C3"],
+//     ["S2C2C1", "S2C2C2"],
+//     ["S2C2C1", "S2C2C3"],
+//     ["S2C2C1", "S2C3C1"],
+//     ["S2C2C1", "S3C2C1"],
+//     ["S2C2C2", "S2C2C3"],
+//     ["S2C2C2", "S2C3C2"],
+//     ["S2C2C2", "S3C2C2"],
+//     ["S2C2C3", "S2C3C3"],
+//     ["S2C2C3", "S3C2C3"],
+//     ["S2C3C1", "S2C3C2"],
+//     ["S2C3C1", "S2C3C3"],
+//     ["S2C3C1", "S3C3C1"],
+//     ["S2C3C2", "S2C3C3"],
+//     ["S2C3C2", "S3C3C2"],
+//     ["S3C1C1", "S3C1C2"],
+//     ["S3C1C1", "S3C1C3"],
+//     ["S3C1C1", "S3C2C1"],
+//     ["S3C1C1", "S3C3C1"],
+//     ["S3C1C2", "S3C1C3"],
+//     ["S3C1C2", "S3C2C2"],
+//     ["S3C1C2", "S3C3C2"],
+//     ["S3C1C3", "S3C2C3"],
+//     ["S3C2C1", "S3C2C2"],
+//     ["S3C2C1", "S3C2C3"],
+//     ["S3C2C1", "S3C3C1"],
+//     ["S3C2C2", "S3C2C3"],
+//     ["S3C2C2", "S3C3C2"],
+//     ["S3C3C1", "S3C3C2"]
+// ];
+const trials = [["Tree snow", "Tree"]]
 const trialOrder = [...trials.keys()];
 shuffleArray(trialOrder);
 const numTrials = trials.length;
 let currentTrialIndex = -1;
-const pageDelay = 5000;
-const trialDelay = 1000;
+const pageDelay = 0; // 5000
+const trialDelay = 0; // 1000
 let startTime = new Date();
 let results = []
 
 setTimeout(() => $("#continueButton").prop("disabled", false), pageDelay);
 
-if (window.screen.height < 600 || window.screen.width < 1000) {
+if (window.screen.height < 100 || window.screen.width < 50) {
     $("#consentPage").hide();
     $("#screenSizeWarning").show();
     $("#screenSize").text(`Your current screen size is ${window.screen.width}x${window.screen.height}.`);
@@ -143,11 +144,11 @@ function nextTrial() {
     } else {
         $("#trialNumber").text(`Trial ${currentTrialIndex + 1}`)
         if (Math.random() < 0.5) {
-            $("#leftImage").attr("src", `img/${trials[trialOrder[currentTrialIndex]][0]}.png`);
-            $("#rightImage").attr("src", `img/${trials[trialOrder[currentTrialIndex]][1]}.png`);
+            $("#leftImage").attr("src", `img/${trials[trialOrder[currentTrialIndex]][0]}.gltf`);
+            $("#rightImage").attr("src", `img/${trials[trialOrder[currentTrialIndex]][1]}.gltf`);
         } else {
-            $("#leftImage").attr("src", `img/${trials[trialOrder[currentTrialIndex]][1]}.png`);
-            $("#rightImage").attr("src", `img/${trials[trialOrder[currentTrialIndex]][0]}.png`);
+            $("#leftImage").attr("src", `img/${trials[trialOrder[currentTrialIndex]][1]}.gltf`);
+            $("#rightImage").attr("src", `img/${trials[trialOrder[currentTrialIndex]][0]}.gltf`);
         }
     }
 }

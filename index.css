@@ -88,14 +88,8 @@ h1 {
     width: 800px;
 }
 
-#leftImageContainer {
-    left: 1em;
-    position: fixed;
-}
-
-#rightImageContainer {
-    right: 1em;
-    position: fixed;
+#imageContainer {
+    column-count: 2;
 }
 
 #appealQuestion {
@@ -117,6 +111,11 @@ h1 {
 
 #demographicsPage table td {
     padding: 1em;
+}
+
+.model {
+    width: 500px;
+    height: 500px;
 }
 
 .red {
