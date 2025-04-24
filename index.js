@@ -75,7 +75,10 @@
 //     ["S3C2C2", "S3C3C2"],
 //     ["S3C3C1", "S3C3C2"]
 // ];
-const trials = [["Tree snow", "Tree"]]
+const trials = [
+    ["Tree snow", "Tree"],
+    ["Tree", "Tree snow"]
+]
 const trialOrder = [...trials.keys()];
 shuffleArray(trialOrder);
 const numTrials = trials.length;
@@ -125,7 +128,7 @@ function realismSubmit(button) {
 
 function getTrialResult(button) {
     let imageString = "";
-    if (button === "Left") {
+    if (button === "Option 1") {
         imageString = $("#leftImage").attr("src");
     } else {
         imageString = $("#rightImage").attr("src");
@@ -144,7 +147,7 @@ function nextTrial() {
     } else {
         $("#trialNumber").text(`Trial ${currentTrialIndex + 1}`)
         if (Math.random() < 0.5) {
-            $("#leftImage").attr("src", `img/${trials[trialOrder[currentTrialIndex]][0]}.gltf`);
+            $("#leftImage").attr("src", `img/${trials[trialOrder[currentTrialIndex]][0]}.gltf`); // Replace with glb later
             $("#rightImage").attr("src", `img/${trials[trialOrder[currentTrialIndex]][1]}.gltf`);
         } else {
             $("#leftImage").attr("src", `img/${trials[trialOrder[currentTrialIndex]][1]}.gltf`);

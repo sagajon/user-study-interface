@@ -17,7 +17,7 @@
     <div id="consentPage" class="page">
         <h2>Consent</h2>
         <p>
-            In this task, you will be presented with computer-generated imagery of stone surfaces. We are interested in seeing how you rate the realism of these images. The task will take approximately four minutes.
+            In this task, you will be presented with computer-generated renders of snow on 3D models. We are interested in seeing how you rate the realism of these images. The task will take approximately [INSERT HERE].
         </p>
         <br>
         <p>
@@ -32,19 +32,15 @@
     <div id="instructionPage" class="page">
         <h2>Instructions</h2>
         <p>
-            In this task, you will be shown two images side by side, both showing an aged stone surface with some objects placed on it, and with lichen growing on it. In order for you to familiarize yourself with the appearance of real lichen, you will first be shown a collection of reference images, which are not to be rated.
+            You will be shown two 3D models side by side, both showing a 3D model of an object which snow has gathered on.
         </p>
         <br>
         <p>
-            Your task is to answer which of the two images is more realistic to you. You answer by clicking on the button associated with the image. In this context, you are free to decide what realism means to you and answer accordingly.
+            Your task is to answer which of the two renders is more realistic to you. You answer by clicking on the button associated with the image. In this context, you are free to decide what realism means to you and answer accordingly.
         </p>
         <br>
         <p>
-            There will be a total of 75 image pairs, each needing to be rated in terms of realism.
-        </p>
-        <br>
-        <p>
-            If the page contents look like they don't fit the window at any point, please zoom the page out by pressing CTRL and - together.
+            There will be a total of [INSERT HERE] pairs, each needing to be rated in terms of realism.
         </p>
         <br>
         <button id="startButton" class="centerButton" disabled onclick="startButtonPressed()">Start</button>
@@ -53,37 +49,32 @@
     <div id="referencePage" class="page">
         <h2>Reference images</h2>
         <p>
-            Here is a collection of images showing the appearance of lichens in real life. Familiarize yourself with the appearance of the lichens, then click Start task below to move on to the rating task.
+            You will be presented with two interactable 3D models at each trial. You can change the angle by clicking and dragging your mouse (computer), or your finger (touch screen).
         </p>
-        <br>
-        <table>
-            <tr>
-                <td>
-                    <img src="img/ref1.jpg">
-                    <a href="https://pxhere.com/en/photo/1369678" target="_blank">source</a>
-                </td>
-                <td>
-                    <img src="img/ref2.jpg">
-                    <a href="https://www.maxpixel.net/Nature-Moss-Rocks-Rock-Texture-Stone-Lichen-1461368" target="_blank">source</a>
-                </td>
-                <td>
-                    <img src="img/ref3.jpg">
-                    <a href="https://www.flickr.com/photos/gemstone/2624337546/in/photostream/" target="_blank">source</a>
-                </td>
-            </tr>
-        </table>
-        <br>
+        <p>Try familiarising yourself with this system now!</p>
+        <div id="imageContainer">
+            <div id="choiceContainer">
+                <model-viewer class="model" id="leftImage" src="img\Wind experiment.glb" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom></model-viewer>
+            </div>
+            <div id="choiceContainer">
+                <model-viewer class="model" id="rightImage" src="img\Wind experiment.glb" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom></model-viewer>
+            </div>
+        </div>
         <button id="trialStartButton" class="centerButton" disabled onclick="trialStartButtonPressed()">Start task</button>
     </div>
 
     <div id="trialPage" class="page">
         <h2 id="trialNumber">Trial x</h2>
-        <p>Of the two images below, which one is more <span class="highlightedText">realistic</span> to you?</p>
+        <p>Of the two renders below, which one is more <span class="highlightedText">realistic</span> to you?</p>
         <div id="imageContainer">
-            <model-viewer class="model" id="leftImage" src="img\Tree snow.gltf" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-            <button class="realismButton" onclick="realismSubmit(this.innerHTML)">Left</button>
-            <model-viewer class="model" id="rightImage" src="img\Tree.gltf" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
-            <button class="realismButton" onclick="realismSubmit(this.innerHTML)">Right</button>
+            <div id="choiceContainer">
+                <model-viewer class="model" id="leftImage" src="img/Wind experiment.glb" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom></model-viewer>
+                <button class="realismButton" onclick="realismSubmit(this.innerHTML)">Option 1</button>
+            </div>
+            <div id="choiceContainer">
+                <model-viewer class="model" id="rightImage" src="img/Wind experiment.glb" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom></model-viewer>
+                <button class="realismButton" onclick="realismSubmit(this.innerHTML)">Option 2</button>
+            </div>
         </div>
     </div>
 
@@ -174,13 +165,12 @@
         <button id="completionButton" class="centerButton" onclick="verifyAndGatherData()">Finish</button>
     </div>
 
-    <!-- This is the original form with the original action, which is no longer available. Replace it with your own URL, or solve it some other way. -->
-    <!--<form id="dataForm" method="POST" action="https://script.google.com/macros/s/AKfycbz3LV65ExXxx1NKAU8pk7EVQ8wpShCdVHvZaA7W01h-NHAWldWtmIZJZp8nSkH1xGSv/exec">
-        <input name="Data" type="hidden">
-    </form>-->
-    <form id="dataForm" method="POST" action="">
+    <form id="dataForm" method="POST" action="https://script.google.com/macros/s/AKfycby-eXGgLAn_rRz4RA6yR88-CLYj6wYhdMkKG0qLQV4biVHYJCAw_As-DZD0-HUQp7_Hiw/exec">
         <input name="Data" type="hidden">
     </form>
+    <!-- <form id="dataForm" method="POST" action="">
+        <input name="Data" type="hidden">
+    </form> -->
 
     <img class="preloadImage" src="img/S1C1C1.png">
     <img class="preloadImage" src="img/S1C1C2.png">
