@@ -54,10 +54,10 @@
         <p>Try familiarising yourself with this system now!</p>
         <div id="imageContainer">
             <div id="choiceContainer">
-                <model-viewer class="model" id="leftImage" src="img\Wind experiment.glb" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom></model-viewer>
+                <model-viewer class="model" id="leftImage" src="img\Sphere_distance.glb" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom></model-viewer>
             </div>
             <div id="choiceContainer">
-                <model-viewer class="model" id="rightImage" src="img\Wind experiment.glb" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom></model-viewer>
+                <model-viewer class="model" id="rightImage" src="img\Sphere_support.glb" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom></model-viewer>
             </div>
         </div>
         <button id="trialStartButton" class="centerButton" disabled onclick="trialStartButtonPressed()">Start task</button>
@@ -68,11 +68,11 @@
         <p>Of the two renders below, which one is more <span class="highlightedText">realistic</span> to you?</p>
         <div id="imageContainer">
             <div id="choiceContainer">
-                <model-viewer class="model" id="leftImage" src="img/Wind experiment.glb" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom></model-viewer>
+                <model-viewer class="model" id="leftImage" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom></model-viewer>
                 <button class="realismButton" onclick="realismSubmit(this.innerHTML)">Option 1</button>
             </div>
             <div id="choiceContainer">
-                <model-viewer class="model" id="rightImage" src="img/Wind experiment.glb" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom></model-viewer>
+                <model-viewer class="model" id="rightImage" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom></model-viewer>
                 <button class="realismButton" onclick="realismSubmit(this.innerHTML)">Option 2</button>
             </div>
         </div>
