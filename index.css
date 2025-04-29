@@ -7,6 +7,10 @@ body {
     height: 75vh
 }
 
+p {
+    font-size: 20px;
+}
+
 h1 {
     text-align: center;
     margin-top: 30px;
@@ -23,11 +27,26 @@ h1 {
     text-align: center;
 }
 
+.reference{
+    width: 30dvw;
+    margin: 5px
+}
+
+.centerTable{
+    display: flex;
+        justify-content: center;
+    column-count: 2;
+}
+
 #screenSizeWarning {
     display: none;
 }
 
 #consentPage p {
+    width: 80%;
+    margin: auto;
+}
+#knowledgePage p {
     width: 80%;
     margin: auto;
 }
@@ -91,12 +110,12 @@ h1 {
     width: 800px;
 } */
 
-#imageContainer {
+.imageContainer {
     column-count: 2;
     margin-top: 10px;
 }
 
-#choiceContainer {
+.choiceContainer {
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 20px;
@@ -155,7 +174,6 @@ button {
 
 .realismButton{
     width: 38vw;
-
 }
 
 .realismButton:hover {
@@ -164,7 +182,7 @@ button {
 }
 
 @media (max-aspect-ratio: 1/1) {
-    #imageContainer{
+    .imageContainer{
         column-count: 1;
     }
 

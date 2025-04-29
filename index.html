@@ -8,31 +8,41 @@
 <body>
     <h1 id="welcomeHeading">Welcome</h1>
 
-    <div id="screenSizeWarning" class="page">
-        <h2>Screen size too small</h2>
-        <p>The size of your screen is too small to effectively display the tasks. Switch to a larger screen, specifically a computer monitor larger than 1000x600.</p>
-        <p id="screenSize"></p>
-    </div>
-
     <div id="consentPage" class="page">
         <h2>Consent</h2>
         <p>
-            In this task, you will be presented with computer-generated renders of snow on 3D models. We are interested in seeing how you rate the realism of these images. The task will take approximately [INSERT HERE].
+            In this task, you will be presented with computer-generated renders of snow on 3D models. We are interested in seeing how you rate the realism of these images. The task will take approximately <b>5-10 minutes</b>.
         </p>
         <br>
         <p>
             By clicking "Continue" below, you agree to take part in this study. Data from this study will be be kept confidential and only shown in aggregate form. This study is conducted in accordance with the ethical guidelines of KTH Royal Institute of Technology.
         </p>
         <br>
-        <!-- <model-viewer src="img\Tree snow.gltf" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer> -->
-        <!-- <img src="img/S1C1C1.png">     -->
         <button id="continueButton" class="centerButton" disabled onclick="continueButtonPressed()">Continue</button>
+    </div>
+
+    <div id="knowledgePage" class="page">
+        <h2>Background knowledge</h2>
+        <p>
+            The study regards the perceived realism of rendered snow on objects. In order to be able to do the task, you must be familiar with snow.
+        </p>
+        <br>
+        <p>
+            If you have never personally seen or interacted with snow, I'd recommend skipping doing this task.
+        </p>
+        <br>
+        <div class="centerTable">
+            <img class="reference" src="https://images.pexels.com/photos/45204/alm-friuli-snow-snowfall-45204.jpeg">
+            <img class="reference" src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Snow_on_fir_trees.jpg">
+        </div>
+        <br>
+        <button id="knowledgeButton" class="centerButton" disabled onclick="knowledgeButtonPressed()">I attest that I am familiar with snow enough to do the task</button>
     </div>
 
     <div id="instructionPage" class="page">
         <h2>Instructions</h2>
         <p>
-            You will be shown two 3D models side by side, both showing a 3D model of an object which snow has gathered on.
+            You will be shown two 3D models side by side, both showing a model of an object which snow has gathered on.
         </p>
         <br>
         <p>
@@ -40,24 +50,29 @@
         </p>
         <br>
         <p>
-            There will be a total of [INSERT HERE] pairs, each needing to be rated in terms of realism.
+            You can complete this task on a phone or computer, but make sure you take your time and remain undisturbed. <span class="highlightedText"><b>Reloading the page will reset the trial.</b></span>
+        </p>
+        <br>
+        <p>
+            There will be a total of 48 pairs, each needing to be rated in terms of realism.
         </p>
         <br>
         <button id="startButton" class="centerButton" disabled onclick="startButtonPressed()">Start</button>
     </div>
 
     <div id="referencePage" class="page">
-        <h2>Reference images</h2>
+        <h2>3D models</h2>
         <p>
             You will be presented with two interactable 3D models at each trial. You can change the angle by clicking and dragging your mouse (computer), or your finger (touch screen).
         </p>
+        <br>
         <p>Try familiarising yourself with this system now!</p>
-        <div id="imageContainer">
-            <div id="choiceContainer">
-                <model-viewer class="model" id="leftImage" src="img\Sphere_distance.glb" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom></model-viewer>
+        <div class="imageContainer">
+            <div class="choiceContainer">
+                <model-viewer class="model" src="models\Tree_S5P1.glb" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom></model-viewer>
             </div>
-            <div id="choiceContainer">
-                <model-viewer class="model" id="rightImage" src="img\Sphere_support.glb" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom></model-viewer>
+            <div class="choiceContainer">
+                <model-viewer class="model" src="models\Sphere_S10P3.glb" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom></model-viewer>
             </div>
         </div>
         <button id="trialStartButton" class="centerButton" disabled onclick="trialStartButtonPressed()">Start task</button>
@@ -66,13 +81,13 @@
     <div id="trialPage" class="page">
         <h2 id="trialNumber">Trial x</h2>
         <p>Of the two renders below, which one is more <span class="highlightedText">realistic</span> to you?</p>
-        <div id="imageContainer">
-            <div id="choiceContainer">
-                <model-viewer class="model" id="leftImage" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom></model-viewer>
+        <div class="imageContainer">
+            <div class="choiceContainer">
+                <model-viewer class="model" id="leftImage" shadow-intensity="1" camera-controls touch-action="pan-y" src="" disable-zoom></model-viewer>
                 <button class="realismButton" onclick="realismSubmit(this.innerHTML)">Option 1</button>
             </div>
-            <div id="choiceContainer">
-                <model-viewer class="model" id="rightImage" shadow-intensity="1" camera-controls touch-action="pan-y" disable-zoom></model-viewer>
+            <div class="choiceContainer">
+                <model-viewer class="model" id="rightImage" shadow-intensity="1" camera-controls touch-action="pan-y" src="" disable-zoom></model-viewer>
                 <button class="realismButton" onclick="realismSubmit(this.innerHTML)">Option 2</button>
             </div>
         </div>
@@ -168,37 +183,6 @@
     <form id="dataForm" method="POST" action="https://script.google.com/macros/s/AKfycby-eXGgLAn_rRz4RA6yR88-CLYj6wYhdMkKG0qLQV4biVHYJCAw_As-DZD0-HUQp7_Hiw/exec">
         <input name="Data" type="hidden">
     </form>
-    <!-- <form id="dataForm" method="POST" action="">
-        <input name="Data" type="hidden">
-    </form> -->
-
-    <img class="preloadImage" src="img/S1C1C1.png">
-    <img class="preloadImage" src="img/S1C1C2.png">
-    <img class="preloadImage" src="img/S1C1C3.png">
-    <img class="preloadImage" src="img/S1C2C1.png">
-    <img class="preloadImage" src="img/S1C2C2.png">
-    <img class="preloadImage" src="img/S1C2C3.png">
-    <img class="preloadImage" src="img/S1C3C1.png">
-    <img class="preloadImage" src="img/S1C3C2.png">
-    <img class="preloadImage" src="img/S1C3C3.png">
-    <img class="preloadImage" src="img/S2C1C1.png">
-    <img class="preloadImage" src="img/S2C1C2.png">
-    <img class="preloadImage" src="img/S2C1C3.png">
-    <img class="preloadImage" src="img/S2C2C1.png">
-    <img class="preloadImage" src="img/S2C2C2.png">
-    <img class="preloadImage" src="img/S2C2C3.png">
-    <img class="preloadImage" src="img/S2C3C1.png">
-    <img class="preloadImage" src="img/S2C3C2.png">
-    <img class="preloadImage" src="img/S2C3C3.png">
-    <img class="preloadImage" src="img/S3C1C1.png">
-    <img class="preloadImage" src="img/S3C1C2.png">
-    <img class="preloadImage" src="img/S3C1C3.png">
-    <img class="preloadImage" src="img/S3C2C1.png">
-    <img class="preloadImage" src="img/S3C2C2.png">
-    <img class="preloadImage" src="img/S3C2C3.png">
-    <img class="preloadImage" src="img/S3C3C1.png">
-    <img class="preloadImage" src="img/S3C3C2.png">
-    <img class="preloadImage" src="img/S3C3C3.png">
 
     <script src="index.js"></script>
 </body>

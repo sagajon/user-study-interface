@@ -1,83 +1,52 @@
-// const trials = [
-//     ["S1C1C1", "S1C1C2"],
-//     ["S1C1C1", "S1C1C3"],
-//     ["S1C1C1", "S1C2C1"],
-//     ["S1C1C1", "S1C3C1"],
-//     ["S1C1C1", "S2C1C1"],
-//     ["S1C1C1", "S3C1C1"],
-//     ["S1C1C2", "S1C1C3"],
-//     ["S1C1C2", "S1C2C2"],
-//     ["S1C1C2", "S1C3C2"],
-//     ["S1C1C2", "S2C1C2"],
-//     ["S1C1C2", "S3C1C2"],
-//     ["S1C1C3", "S1C2C3"],
-//     ["S1C1C3", "S1C3C3"],
-//     ["S1C1C3", "S2C1C3"],
-//     ["S1C1C3", "S3C1C3"],
-//     ["S1C2C1", "S1C2C2"],
-//     ["S1C2C1", "S1C2C3"],
-//     ["S1C2C1", "S1C3C1"],
-//     ["S1C2C1", "S2C2C1"],
-//     ["S1C2C1", "S3C2C1"],
-//     ["S1C2C2", "S1C2C3"],
-//     ["S1C2C2", "S1C3C2"],
-//     ["S1C2C2", "S2C2C2"],
-//     ["S1C2C2", "S3C2C2"],
-//     ["S1C2C3", "S1C3C3"],
-//     ["S1C2C3", "S2C2C3"],
-//     ["S1C2C3", "S3C2C3"],
-//     ["S1C3C1", "S1C3C2"],
-//     ["S1C3C1", "S1C3C3"],
-//     ["S1C3C1", "S2C3C1"],
-//     ["S1C3C1", "S3C3C1"],
-//     ["S1C3C2", "S1C3C3"],
-//     ["S1C3C2", "S2C3C2"],
-//     ["S1C3C2", "S3C3C2"],
-//     ["S1C3C3", "S2C3C3"],
-//     ["S2C1C1", "S2C1C2"],
-//     ["S2C1C1", "S2C1C3"],
-//     ["S2C1C1", "S2C2C1"],
-//     ["S2C1C1", "S2C3C1"],
-//     ["S2C1C1", "S3C1C1"],
-//     ["S2C1C2", "S2C1C3"],
-//     ["S2C1C2", "S2C2C2"],
-//     ["S2C1C2", "S2C3C2"],
-//     ["S2C1C2", "S3C1C2"],
-//     ["S2C1C3", "S2C2C3"],
-//     ["S2C1C3", "S2C3C3"],
-//     ["S2C1C3", "S3C1C3"],
-//     ["S2C2C1", "S2C2C2"],
-//     ["S2C2C1", "S2C2C3"],
-//     ["S2C2C1", "S2C3C1"],
-//     ["S2C2C1", "S3C2C1"],
-//     ["S2C2C2", "S2C2C3"],
-//     ["S2C2C2", "S2C3C2"],
-//     ["S2C2C2", "S3C2C2"],
-//     ["S2C2C3", "S2C3C3"],
-//     ["S2C2C3", "S3C2C3"],
-//     ["S2C3C1", "S2C3C2"],
-//     ["S2C3C1", "S2C3C3"],
-//     ["S2C3C1", "S3C3C1"],
-//     ["S2C3C2", "S2C3C3"],
-//     ["S2C3C2", "S3C3C2"],
-//     ["S3C1C1", "S3C1C2"],
-//     ["S3C1C1", "S3C1C3"],
-//     ["S3C1C1", "S3C2C1"],
-//     ["S3C1C1", "S3C3C1"],
-//     ["S3C1C2", "S3C1C3"],
-//     ["S3C1C2", "S3C2C2"],
-//     ["S3C1C2", "S3C3C2"],
-//     ["S3C1C3", "S3C2C3"],
-//     ["S3C2C1", "S3C2C2"],
-//     ["S3C2C1", "S3C2C3"],
-//     ["S3C2C1", "S3C3C1"],
-//     ["S3C2C2", "S3C2C3"],
-//     ["S3C2C2", "S3C3C2"],
-//     ["S3C3C1", "S3C3C2"]
-// ];
 const trials = [
-  ["Sphere_distance", "Sphere_support"],
-  ["Sphere_support", "Sphere_distance"],
+  ["Sphere_S5P1", "Sphere_S5P2"],
+  ["Sphere_S5P1", "Sphere_S5P3"],
+  ["Sphere_S5P1", "Sphere_S5P4"],
+  ["Sphere_S5P1", "Sphere_S10P1"],
+  ["Sphere_S5P2", "Sphere_S5P3"],
+  ["Sphere_S5P2", "Sphere_S5P4"],
+  ["Sphere_S5P2", "Sphere_S10P2"],
+  ["Sphere_S5P3", "Sphere_S5P4"],
+  ["Sphere_S5P3", "Sphere_S10P3"],
+  ["Sphere_S5P4", "Sphere_S10P4"],
+  ["Sphere_S10P1", "Sphere_S10P2"],
+  ["Sphere_S10P1", "Sphere_S10P3"],
+  ["Sphere_S10P1", "Sphere_S10P4"],
+  ["Sphere_S10P2", "Sphere_S10P3"],
+  ["Sphere_S10P2", "Sphere_S10P4"],
+  ["Sphere_S10P3", "Sphere_S10P4"],
+  ["Tree_S5P1", "Tree_S5P2"],
+  ["Tree_S5P1", "Tree_S5P3"],
+  ["Tree_S5P1", "Tree_S5P4"],
+  ["Tree_S5P1", "Tree_S10P1"],
+  ["Tree_S5P2", "Tree_S5P3"],
+  ["Tree_S5P2", "Tree_S5P4"],
+  ["Tree_S5P2", "Tree_S10P2"],
+  ["Tree_S5P3", "Tree_S5P4"],
+  ["Tree_S5P3", "Tree_S10P3"],
+  ["Tree_S5P4", "Tree_S10P4"],
+  ["Tree_S10P1", "Tree_S10P2"],
+  ["Tree_S10P1", "Tree_S10P3"],
+  ["Tree_S10P1", "Tree_S10P4"],
+  ["Tree_S10P2", "Tree_S10P3"],
+  ["Tree_S10P2", "Tree_S10P4"],
+  ["Tree_S10P3", "Tree_S10P4"],
+  ["House_S5P1", "House_S5P2"],
+  ["House_S5P1", "House_S5P3"],
+  ["House_S5P1", "House_S5P4"],
+  ["House_S5P1", "House_S10P1"],
+  ["House_S5P2", "House_S5P3"],
+  ["House_S5P2", "House_S5P4"],
+  ["House_S5P2", "House_S10P2"],
+  ["House_S5P3", "House_S5P4"],
+  ["House_S5P3", "House_S10P3"],
+  ["House_S5P4", "House_S10P4"],
+  ["House_S10P1", "House_S10P2"],
+  ["House_S10P1", "House_S10P3"],
+  ["House_S10P1", "House_S10P4"],
+  ["House_S10P2", "House_S10P3"],
+  ["House_S10P2", "House_S10P4"],
+  ["House_S10P3", "House_S10P4"],
 ];
 
 const trialOrder = [...trials.keys()];
@@ -91,16 +60,24 @@ let results = [];
 
 setTimeout(() => $("#continueButton").prop("disabled", false), pageDelay);
 
-if (window.screen.height < 100 || window.screen.width < 50) {
-  $("#consentPage").hide();
-  $("#screenSizeWarning").show();
-  $("#screenSize").text(
-    `Your current screen size is ${window.screen.width}x${window.screen.height}.`
-  );
-}
+// if (window.screen.height < 100 || window.screen.width < 50) {
+//   $("#consentPage").hide();
+//   $("#screenSizeWarning").show();
+//   $("#screenSize").text(
+//     `Your current screen size is ${window.screen.width}x${window.screen.height}.`
+//   );
+// }
+$("#knowledgePage").hide();
 
 function continueButtonPressed() {
   $("#consentPage").hide();
+  $("#knowledgePage").show();
+  $("#welcomeHeading").hide();
+  setTimeout(() => $("#knowledgeButton").prop("disabled", false), pageDelay);
+}
+
+function knowledgeButtonPressed() {
+  $("#knowledgePage").hide();
   $("#instructionPage").show();
   $("#welcomeHeading").hide();
   setTimeout(() => $("#startButton").prop("disabled", false), pageDelay);
@@ -149,23 +126,27 @@ function nextTrial() {
     finishTrials();
   } else {
     $("#trialNumber").text(`Trial ${currentTrialIndex + 1}`);
+
+    const leftModel = document.getElementById("leftImage");
+    const rightModel = document.getElementById("rightImage");
+
     if (Math.random() < 0.5) {
-      $("#leftImage").attr(
+      leftModel.setAttribute(
         "src",
-        `img/${trials[trialOrder[currentTrialIndex]][0]}.glb`
+        `models/${trials[trialOrder[currentTrialIndex]][0]}.glb`
       );
-      $("#rightImage").attr(
+      rightModel.setAttribute(
         "src",
-        `img/${trials[trialOrder[currentTrialIndex]][1]}.glb`
+        `models/${trials[trialOrder[currentTrialIndex]][1]}.glb`
       );
     } else {
-      $("#leftImage").attr(
+      leftModel.setAttribute(
         "src",
-        `img/${trials[trialOrder[currentTrialIndex]][1]}.glb`
+        `models/${trials[trialOrder[currentTrialIndex]][1]}.glb`
       );
-      $("#rightImage").attr(
+      rightModel.setAttribute(
         "src",
-        `img/${trials[trialOrder[currentTrialIndex]][0]}.glb`
+        `models/${trials[trialOrder[currentTrialIndex]][0]}.glb`
       );
     }
   }
