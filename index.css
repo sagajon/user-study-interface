@@ -187,11 +187,21 @@ button {
     }
 
     .model{
-        width: 70vw;
-        height: 70vw;
+        width: 80vw;
+        height: 80vw;
     }
     
     .realismButton {
-        width: 70vw;
+        width: 80vw;
+    }
+
+    p {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 50px;
+    }
+    button{
+        font-size: 35px;
     }
   }

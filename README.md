@@ -1,3 +1,9 @@
+# Forked version!
+
+This is a fork of https://github.com/steenish/user-study-interface, which I used for my own thesis. The major change between this version and the original one is the addition of <model-viewer> to allow the comparison of 3D renders instead of 2D images. Investigate and reuse the code if you want.
+
+Original readme:
+
 # Procedural generation user study example
 
 This is the interface I used for conducting a user study as part of my [master's thesis](http://kth.diva-portal.org/smash/record.jsf?pid=diva2%3A1661985&dswid=9843). It implements a 2 alternative forced choice (2AFC) study design to find perceived differences between images generated procedurally. See the method described in detail in section 4 of the thesis.
