@@ -1,6 +1,6 @@
 # Forked version!
 
-This is a fork of https://github.com/steenish/user-study-interface, which I used for my own thesis. The major change between this version and the original one is the addition of <model-viewer> to allow the comparison of 3D renders instead of 2D images. Investigate and reuse the code if you want.
+This is a fork of https://github.com/steenish/user-study-interface, which I used for my own thesis. The major change between this version and the original one is the addition of [model-viewer](https://modelviewer.dev/) to allow the comparison of 3D renders instead of 2D images. Investigate and reuse the code if you want.
 
 Original readme:
 
